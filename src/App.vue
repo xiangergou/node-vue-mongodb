@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
@@ -10,7 +9,9 @@ export default {
   name: 'App'
 }
 </script>
-
+<!--   $ (function () {
+    alert(123)
+  }) -->
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

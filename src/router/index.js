@@ -1,15 +1,18 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+'use strict'
 
-Vue.use(Router)
+const root = {
+  path: '',
+  name: 'login',
+  redirect: '/main/login'
+}
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
-})
+const routes = [
+  root,
+  require('./main'),
+  {
+    path: '*',
+    redirect: ''
+  }
+]
+
+module.exports = routes
