@@ -1,6 +1,6 @@
 # node-socket-vue
 
-> A Vue.js project
+> 我的第一次node+vue尝试即时聊天demo  --2018.2.6
 
 ## Build Setup
 
