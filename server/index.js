@@ -5,7 +5,7 @@ var bodyParser = require('body-parser')
 var path = require('path')
 var port = process.env.PORT || 8088
 var mongoose = require("mongoose")
-var User = require('./api')
+var User = require('../models')
 var config = require('../nodeConfig.js').mongodb
 
 var express = require('express')

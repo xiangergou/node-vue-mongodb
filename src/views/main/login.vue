@@ -47,10 +47,14 @@ export default {
     },
     signup () {
       let self = this
-      // 获取已有账号密码
+      if (!this.username || !this.password) {
+            window.alert('用户名或密码不能为空！')
+            return false
+          }
       let params = {
         username: this.username
       }
+      // 获取已有账号密码
       this.$http.post('/api/getUser', params)
         .then((res) => {
           // 响应成功回调
@@ -61,10 +65,6 @@ export default {
           let params = {
             username: this.username,
             password: this.password
-          }
-          if (!this.username || !this.password) {
-            window.alert('用户名或密码不能为空！')
-            return false
           }
           // 创建一个账号密码
           return this.$http.post('/api/signup', params)

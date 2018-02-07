@@ -1,7 +1,7 @@
 
 
 var mongoose = require('mongoose')
-var UserSchema = require('./db')
+var UserSchema = require('../schemas')
 var Login = mongoose.model('Login', UserSchema)
 
 // const express = require('express');
