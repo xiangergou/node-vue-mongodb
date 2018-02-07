@@ -24,7 +24,7 @@ export default {
   methods: {
     login () {
       // 获取已有账号密码
-      this.$http.get('/api/login/getAccount')
+      this.$http.get('/api/getUser')
         .then((response) => {
           // 响应成功回调
           console.log(response)

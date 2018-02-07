@@ -6,7 +6,7 @@ var path = require('path')
 var port = process.env.PORT || 8088
 var mongoose = require("mongoose")
 var User = require('./api')
-var config = require('../config.js').mongodb
+var config = require('../nodeConfig.js').mongodb
 
 var express = require('express')
 var app = express()
@@ -27,18 +27,18 @@ app.use(express.static(path.resolve(__dirname, '../dist')))
 
 
 // 获取已有账号接口
-app.get('/getUser',(req,res) => {
+app.get('/api/getUser',(req,res) => {
     // 通过模型去查找数据库
   User.Login.find((err,data) => {
       if (err) {
           res.send(err)
       } else {
-          res.send(data)
+          res.send({data: 'dsads'})
       }
   })
 })
 
-app.post('/signup', (req, res) => {
+app.post('/api/signup', (req, res) => {
   let userObj = req.body
   res.send(userObj)
   // let _user = new User({

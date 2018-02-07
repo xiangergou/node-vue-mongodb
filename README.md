@@ -5,6 +5,8 @@
 ## Build Setup
 
 ``` bash
+# 2018年2月7日下午3点 在下成功迈出vue请求自建node接口第一部
+
 # install dependencies
 npm install
 
