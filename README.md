@@ -145,7 +145,7 @@
 
 
 - 目录结构大致长这样儿  
-    ![目录结构](https://github.com/xiangergou/node-vue-socket/raw/master/src/assets/logo.png) 
+    ![目录结构](https://github.com/xiangergou/node-vue-socket/raw/master/src/assets/structure.jpeg) 
 
     至此，后端可以开整了
     
