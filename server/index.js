@@ -1,30 +1,15 @@
 
-
-var fs = require('fs')
+var express = require('express')
+var app = express()
+// 引入处理post数据的模块
 var bodyParser = require('body-parser')
-var path = require('path')
 var port = process.env.PORT || 8088
 var mongoose = require("mongoose")
 var User = require('../models')
 var config = require('../nodeConfig.js').mongodb
 
-var express = require('express')
-var app = express()
-// var router = express.Router()
-
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
-
-// app.use(api)
-
-// 访问静态资源文件 这里是访问所有dist目录下的静态资源文件
-app.use(express.static(path.resolve(__dirname, '../dist')))
-
-// app.get('*', function(req, res, next) {
-//   let html = fs.readFileSync(path.resolve(__dirname, '../dist/index.html'), 'utf-8')
-//   res.send(html)
-// })
-
 
 // 获取已有账号接口
 app.post('/api/getUser',(req, res) => {

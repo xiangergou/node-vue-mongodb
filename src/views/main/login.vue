@@ -19,8 +19,9 @@
     </fieldset>
   </form>
 </template>
-
 <script>
+const signButton = '老夫且先注册个'
+const loginButton = '待朕前去登录'
 export default {
   data () {
     return {
@@ -32,7 +33,7 @@ export default {
   },
   computed: {
     switchName () {
-      return (this.isLogin ? '老夫且先注册个！' : '待朕前去登录')
+      return (this.isLogin ? signButton : loginButton)
     },
     title () {
       return (this.isLogin ? 'login' : 'signup')
