@@ -5,7 +5,9 @@ var app = express()
 var bodyParser = require('body-parser')
 var port = process.env.PORT || 8088
 var mongoose = require("mongoose")
+// 引入我们创建的model
 var User = require('../models')
+// 引入配置文件
 var config = require('../nodeConfig.js').mongodb
 
 app.use(bodyParser.json())
@@ -28,7 +30,7 @@ app.post('/api/getUser',(req, res) => {
       }
   })
 })
-
+// 注册
 app.post('/api/signup', (req, res) => {
   let userObj = req.body
   let _user = new User.Login({
@@ -43,7 +45,7 @@ app.post('/api/signup', (req, res) => {
     }
   })
 })
-
+// 登录
 app.post('/api/login', (req, res) => {
   let userdata = req.body
   User.Login.findOne({username: userdata.username, password: userdata.password}, (err, data, next) => {
@@ -58,8 +60,6 @@ app.post('/api/login', (req, res) => {
       }
   })
 })
-
-
 
 mongoose.connect(config.host  + config.database, {useMongoClient:true})
 var db = mongoose.connection
