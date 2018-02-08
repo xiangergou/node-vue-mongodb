@@ -1,10 +1,10 @@
 
 ## Node-Vue-MongoDB 实现表单注册登录(极适node练手)
-==================================
+======================================================================================
 
 - **项目简介**： 基于node、vue及mongoDB等搭建的简易表单注册登录，尝试vue亲自宠幸node。
  
-- *思路* :  
+- **思路** :  
   1.前后端分离开发，前端用bootstrap搭建表单，后端由node搭建接口提供数据交互接口。  
   2.通过Vue-Cli中提供的proxyTable进行代理，借以跨域调用Node编写的API。 
   
@@ -20,13 +20,14 @@
 - **主要流程** ：
 
   1.安装Vue-Cli  
-    此处注意： (vue-cli版本更新后默认关闭了自动打开浏览器，若有需要可在config/index.js)
+    此处注意： (vue-cli版本更新后默认关闭了自动打开浏览器)
     ```
-     host: 'localhost', // can be overwritten by process.env.HOST
+    // config/index.js
+    host: 'localhost', // can be overwritten by process.env.HOST
     port: 3000, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false, // 恩，就是字面意思
     ```
-  2.引入bootstrap (这方面度娘懂得老多了)
+  2.引入bootstrap (这方面度娘懂得老多了)  
   3.开整：
    - 表单搭建，无甚好说。   
    ```
@@ -141,8 +142,11 @@
    > npm run dev  
 
     此时若无意外即可看到光秃秃的表单呈现，按钮点击无反应且会报错。莫急，且先搭建接口。
+
+
 - 目录结构大致长这样儿  
-    ![目录结构](https://github.com/xiangergou/node-vue-socket/raw/master/src/assets/structure.jpeg)  
+    ![目录结构](https://github.com/xiangergou/node-vue-socket/raw/master/src/assets/logo.png) 
+
     至此，后端可以开整了
     
     > npm install express –-save-dev  
@@ -243,7 +247,7 @@
 
 
     ```    
-    ### 定义schema.(在mongoose中操作数据库都是通过模型来操作的。)  
+    ### 定义schema。(在mongoose中操作数据库都是通过模型来操作的)  
     ```
     // scheams/index.js
     var mongoose = require('mongoose')
@@ -301,8 +305,8 @@
         }
       ```  
     
-=================================  
-    至此，整个项目就算基本完成。事实上这也是鄙人node初探，期间也踩过不少坑，但最终还是实现了功能。 在下敲文这段时间就看到了n处可优化的地方，然则并不打算维护了，下一期用 vue+node+socket.io 做一个聊天系统，定要做的精致些。这一期就到这儿，荆轲刺秦王。
+=========================================================================================
+    至此，若无意外，前端可获取接口返回的数据，整个项目就算基本完成。事实上这也是鄙人node初探，期间也踩过不少坑，但最终还是实现了功能。   然则就在下敲文这段时间就看到了n处可优化的地方，但也并不打算维护了，下一期用 vue+node+socket.io 做一个聊天系统，定要做的精致些。这一期就到这儿，荆轲刺秦王。
     
 
 
